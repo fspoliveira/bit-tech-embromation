@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var tech_phrases = require('./tech-phrases');
+
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -14,16 +16,10 @@ app.get('/', function(request, response) {
 });
 
 app.get('/pages/tech-phrases', function(req, res){
-var drinks = [
-        { name: 'Bloody Mary', drunkness: 3 },
-        { name: 'Martini', drunkness: 5 },
-        { name: 'Scotch', drunkness: 10 }
-    ];
-    var tagline = "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.";
+var prhs = tech_phrases.myPhrases();
 
     res.render('pages/tech-phrases', {
-        drinks: drinks,
-        tagline: tagline
+        drinks: prhs,        
     });
 });
 
@@ -31,5 +27,3 @@ var drinks = [
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-

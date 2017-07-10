@@ -16,10 +16,8 @@ app.get('/', function(request, response) {
 });
 
 app.get('/pages/tech-phrases', function(req, res){
-var prhs = tech_phrases.myPhrases();
-
     res.render('pages/tech-phrases', {
-        drinks: prhs,        
+        prhs: tech_phrases.myPhrases(),        
     });
 });
 

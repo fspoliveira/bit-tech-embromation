@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
   <% include ../partials/header.ejs %>
 </head>
 
 <body>
-
 <% include ../partials/nav.ejs %>
-
 <div class="container">
-<h2>Database Results</h2>
-
+<h2>Results</h2>
 <ul>
-    <% drinks.forEach(function(drink) { %>
-        <li><%= drink.name %> - <%= drink.drunkness %></li>
+    <% prhs.forEach(function(prh) { %>
+        <li><%= prh.id %> - <%= prh.name %></li>
     <% }); %>
 </ul>
-
 </div>
 </body>
 </html>
